@@ -2,10 +2,17 @@ version: '3'
 services:
   bs_administration:
     build: ./businessservices/bs_administration
+    ports:
+    - "9100:9100"
   bs_movements:
     build: ./businessservices/bs_movements
+    ports:
+    - "9110:9110"
   ds_administration:
     build: ./dataservices/ds_administration
+    ports:
+    - "9000:9000"
   ds_movements:
     build: ./dataservices/ds_movements
-    
+    ports:
+    - "9010:9010"
