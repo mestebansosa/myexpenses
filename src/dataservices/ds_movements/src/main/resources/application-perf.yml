@@ -1,0 +1,5 @@
+spring:
+    profiles: perf
+
+logging.config: classpath:performance.xml
+

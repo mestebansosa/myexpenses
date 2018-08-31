@@ -1,0 +1,4 @@
+spring:
+    profiles: dev
+
+logging.config: classpath:develop.xml

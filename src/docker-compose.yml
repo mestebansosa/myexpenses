@@ -1,0 +1,11 @@
+version: '3'
+services:
+  bs_administration:
+    build: ./businessservices/bs_administration
+  bs_movements:
+    build: ./businessservices/bs_movements
+  ds_administration:
+    build: ./dataservices/ds_administration
+  ds_movements:
+    build: ./dataservices/ds_movements
+    

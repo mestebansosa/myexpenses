@@ -1,0 +1,5 @@
+spring:
+    profiles: debug
+
+logging.config: classpath:debug.xml
+
