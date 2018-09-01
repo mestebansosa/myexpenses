@@ -1,0 +1,9 @@
+csv_id_login,csv_id_date,csv_expenses_category,csv_expenses_expenseName,csv_expenses_description,csv_expenses_quantity
+mesteban,01/01/18,ocio,restaurantes,MULTIPLE,39.47
+mesteban,01/01/18,ocio,ropa,MULTIPLE,39.47
+mesteban,15/01/18,juegos,loterias,MULTIPLE,17.40
+mesteban,15/01/18,juegos,loterias,MULTIPLE,50
+mesteban,15/01/18,transporte,manuel,MULTIPLE,50
+mesteban,22/01/18,subscripciones,ugt,MULTIPLE,592
+mesteban,22/01/18,subscripciones,piscina,uam MULTIPLE,592
+mesteban,22/01/18,subscripciones,piscina,cam MULTIPLE,592

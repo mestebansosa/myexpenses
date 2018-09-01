@@ -1,18 +1,29 @@
 version: '3'
 services:
   bs_administration:
-    build: ./businessservices/bs_administration
+    build: ./businessservices/bs_administration  # build the image from the Dockerfile
     ports:
-    - "9100:9100"
+      - "9100:9100"
   bs_movements:
     build: ./businessservices/bs_movements
     ports:
-    - "9110:9110"
+      - "9110:9110"
   ds_administration:
     build: ./dataservices/ds_administration
     ports:
-    - "9000:9000"
+      - "9000:9000"
+    links:
+      - mongo
   ds_movements:
     build: ./dataservices/ds_movements
     ports:
-    - "9010:9010"
+      - "9010:9010"
+    links:
+      - mongo
+  mongodb:
+    container_name: mongo
+    restart: always
+    image: mongo:3 # image from docker hub
+    ports:  # local machine: container
+      - "27107:27107"
+    

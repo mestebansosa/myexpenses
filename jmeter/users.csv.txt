@@ -1,0 +1,11 @@
+csv_id,csv_firstname,csv_lastname,csv_email,csv_password
+mesteban01,Manuel01,Esteban Sosa,mesteba@mail.con,newuser01
+mesteban02,Manuel02,Esteban Sosa,mesteba@mail.con,newuser02
+mesteban03,Manuel03,Esteban Sosa,mesteba@mail.con,newuser03
+mesteban04,Manuel04,Esteban Sosa,mesteba@mail.con,newuser04
+mesteban05,Manuel05,Esteban Sosa,mesteba@mail.con,newuser05
+mesteban06,Manuel06,Esteban Sosa,mesteba@mail.con,newuser06
+mesteban07,Manuel07,Esteban Sosa,mesteba@mail.con,newuser07
+mesteban08,Manuel08,Esteban Sosa,mesteba@mail.con,newuser08
+mesteban09,Manuel09,Esteban Sosa,mesteba@mail.con,newuser09
+mesteban10,Manuel10,Esteban Sosa,mesteba@mail.con,newuser10

@@ -1,0 +1,29 @@
+csv_id_category,csv_id_expenseName,csv_fixed,csv_maxPerDay,csv_maxPerMonth,csv_maxPerYear
+casa madrid,comunidad,true,0,0,0
+casa madrid,luz y gas,true,0,0,0
+casa madrid,agua,true,0,0,0
+casa madrid,IBI,true,0,0,0
+casa madrid,mutua seguro vivienda,true,0,0,0
+casa lamanga,comunidad,true,0,0,0
+casa lamanga,luz,true,0,0,0
+casa lamanga,IBI,true,0,0,0
+casa lamanga,maphre seguro vivienda,true,0,0,0
+coche laguna,impuesto circulacion,true,0,0,0
+coche laguna,mutua seguro,true,0,0,0
+coche laguna,mantenimiento,false,0,0,0
+coche laguna,combustible,false,0,100,1000
+comunicaciones,fijo,true,0,100,1000
+comunicaciones,movil,true,0,100,1000
+comunicaciones,fibra,true,0,100,1000
+sanidad,adeslas,true,0,100,1000
+sanidad,medicamentos,true,0,100,1000
+sanidad,visitas,true,0,100,1000
+juegos,loterias,false,10,50,600
+ocio,restaurantes,false,80,320,3200
+ocio,ropa,false,80,320,3200
+comida,general,false,80,320,3200
+transporte,maria,true,80,320,3200
+transporte,manuel,true,80,320,3200
+subscripciones,ugt,true,80,320,3200
+subscripciones,piscina,true,80,320,3200
+varios,general,true,80,320,3200

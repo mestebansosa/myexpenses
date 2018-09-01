@@ -1,0 +1,11 @@
+csv_id,csv_user,csv_start,csv_end
+sessionId01,mesteban01,,
+sessionId02,mesteban02,,
+sessionId03,mesteban03,,
+sessionId04,mesteban04,,
+sessionId05,mesteban05,,
+sessionId06,mesteban06,,
+sessionId07,mesteban07,,
+sessionId08,mesteban08,,
+sessionId09,mesteban09,,
+sessionId10,mesteban10,,
