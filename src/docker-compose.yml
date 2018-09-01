@@ -12,14 +12,14 @@ services:
     build: ./dataservices/ds_administration
     ports:
       - "9000:9000"
-    links:
-      - mongo
+    #links:
+    #  - mongo
   ds_movements:
     build: ./dataservices/ds_movements
     ports:
       - "9010:9010"
-    links:
-      - mongo
+    #links:
+    #  - mongo
   mongodb:
     container_name: mongo
     restart: always

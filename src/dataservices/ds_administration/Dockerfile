@@ -1,4 +1,7 @@
 FROM openjdk:8
-ADD target/ds_administration-1.0.0-SNAPSHOT.jar ds_administration-1.0.0-SNAPSHOT.jar
+WORKDIR /usr/app
+ENV JARFILE ds_administration-1.0.0-SNAPSHOT.jar
+COPY target/JARFILE ./
+COPY src/main/resources/application.yml ./
 EXPOSE 9000
-ENTRYPOINT ["java", "-jar", "ds_administration-1.0.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", JARFILE]
