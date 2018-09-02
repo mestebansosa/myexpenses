@@ -31,18 +31,16 @@ swagger.config.title: ${spring.application.name} REST API
 # mongo -u "root" -p "123456" --authenticationDatabase "admin"
 # > use myexpenses
 # > db.createUser({user: "mesteban", pwd: "newuser1", roles:["dbOwner"]})
-# mongo -u "mesteban" -p "newuser1"
+# mongo -u "mesteban" -p "newuser1" --authenticationDatabase "admin"
 
 # MONGODB (MongoProperties)
 spring.data.mongodb:
     database: myexpenses
-    # host: 127.0.0.1
-    host: mongo
+    host: mongo  # docker-compose.yml service name for mongodb
     port: 27017
     username: mesteban
     password: newuser1
-    # uri: mongodb://mesteban:newuser1@127.0.0.1:27017/myexpenses?w=1&socketTimeoutMS=10000
-    uri: mongodb://mongo:27017/myexpenses?w=1&socketTimeoutMS=10000
+    uri: mongodb://mesteban:newuser1@mongo:27017/myexpenses?w=1&socketTimeoutMS=10000
     options:
         socketTimeout: 5000
         connectionTimeout: 1000

@@ -7,13 +7,13 @@ debug: false # Enable debug logs.
 trace: false # Enable trace logs.
 
 # IDENTITY (ContextIdApplicationContextInitializer)
-spring.application.name: dataservice administration
+spring.application.name: dataservice movements
 
 # PROFILES
 spring.profiles.active: default
 
 # EMBEDDED SERVER CONFIGURATION (ServerProperties)
-server.port: 9000
+server.port: 9010
 server.servlet.context-path: /myexpenses
 
 # swagger
@@ -36,13 +36,11 @@ swagger.config.title: ${spring.application.name} REST API
 # MONGODB (MongoProperties)
 spring.data.mongodb:
     database: myexpenses
-    # host: 127.0.0.1
-    host: mongo
+    host: mongo  # docker-compose.yml service name for mongodb
     port: 27017
     username: mesteban
     password: newuser1
-    # uri: mongodb://mesteban:newuser1@127.0.0.1:27017/myexpenses?w=1&socketTimeoutMS=10000
-    uri: mongodb://mongo:27017/myexpenses?w=1&socketTimeoutMS=10000
+    uri: mongodb://mesteban:newuser1@mongo:27017/myexpenses?w=1&socketTimeoutMS=10000
     options:
         socketTimeout: 5000
         connectionTimeout: 1000

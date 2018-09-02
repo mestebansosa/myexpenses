@@ -12,8 +12,8 @@ services:
     build: ./dataservices/ds_administration
     ports:
       - "9000:9000"
-    #links:
-    #  - mongo
+    depends_on:
+      - mongodb
   ds_movements:
     build: ./dataservices/ds_movements
     ports:
@@ -23,7 +23,17 @@ services:
   mongodb:
     container_name: mongo
     restart: always
-    image: mongo:3 # image from docker hub
+    image: mongo:3 # from docker hub
+    environment:
+      # provide your credentials here
+      - AUTH=yes
+      - MONGO_INITDB_ROOT_USERNAME=mesteban
+      - MONGO_INITDB_ROOT_PASSWORD=newuser1
+      # - MONGODB_ADMIN_USER=mesteban
+      # - MONGODB_ADMIN_PASS=newuser1
+      - MONGODB_APPLICATION_DATABASE=myexpenses
     ports:  # local machine: container
       - "27107:27107"
+    # no --auth is needed here as presence of username and password add this option automatically
+    command: mongod
     
