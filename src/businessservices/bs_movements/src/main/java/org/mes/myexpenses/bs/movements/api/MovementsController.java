@@ -1,6 +1,7 @@
 package org.mes.myexpenses.bs.movements.api;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -28,7 +29,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -213,6 +213,18 @@ public class MovementsController {
 		
 		movements.deleteById(movementId);
 	}
+
+	@GetMapping("/streams")
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public Iterable<Movement> streams() {
+		log.info("{}", "streams");
+		
+		List<Movement> movementList = movements.findAll();
+		movementList.stream();
+		return movementList;
+	}
+	
 
 	/**
 	 * Check out expenses have a correct Category

@@ -4,36 +4,43 @@ services:
     build: ./businessservices/bs_administration  # build the image from the Dockerfile
     ports:
       - "9100:9100"
+    depends_on:
+      - ds_administration
   bs_movements:
     build: ./businessservices/bs_movements
     ports:
       - "9110:9110"
+    depends_on:
+      - ds_movements
   ds_administration:
+    container_name: dsadministration # it is essential for other services to communicate with.
     build: ./dataservices/ds_administration
     ports:
       - "9000:9000"
     depends_on:
       - mongodb
   ds_movements:
+    container_name: dsmovements # it is essential for other services to communicate with.
     build: ./dataservices/ds_movements
     ports:
       - "9010:9010"
-    #links:
-    #  - mongo
+    depends_on:
+      - mongodb
   mongodb:
-    container_name: mongo
+    container_name: mongo # it is essential for other services to communicate with.
     restart: always
     image: mongo:3 # from docker hub
     environment:
       # provide your credentials here
       - AUTH=yes
-      - MONGO_INITDB_ROOT_USERNAME=mesteban
-      - MONGO_INITDB_ROOT_PASSWORD=newuser1
-      # - MONGODB_ADMIN_USER=mesteban
-      # - MONGODB_ADMIN_PASS=newuser1
-      - MONGODB_APPLICATION_DATABASE=myexpenses
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+      - MONGODB_INITDB_DATABASE=myexpenses
     ports:  # local machine: container
       - "27107:27107"
+    volumes:
+      # if you wish to setup additional user accounts specific per DB or with different roles you can use following entry point
+      - "./mongo-entrypoint/:/docker-entrypoint-initdb.d/"
     # no --auth is needed here as presence of username and password add this option automatically
     command: mongod
     

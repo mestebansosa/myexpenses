@@ -1,0 +1,95 @@
+# https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+# ----------------------------------------
+# CORE PROPERTIES
+# ----------------------------------------
+debug: false # Enable debug logs.
+trace: false # Enable trace logs.
+
+# IDENTITY (ContextIdApplicationContextInitializer)
+spring.application.name: business service administration
+
+# PROFILES
+spring.profiles.active: default
+
+# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+server.port: 9100
+server.servlet.context-path: /myexpenses
+
+# swagger
+swagger.config.title: ${spring.application.name} REST API
+
+# Cookies
+server.servlet.session:
+      cookie:
+        max-age: 10m
+        name: myexpenses
+        comment: "myexpenses cookie"
+        http-only: false
+        secure: false
+      timeout: 30m
+
+rest.template.enabled: true
+
+# Data service mongodb
+myexpenses.dataservices.administration:
+    host: dsadministration # docker-compose.yml service name for the ds
+    port: 9000
+    usersPath: myexpenses/api/users
+    sessionsPath: myexpenses/api/sessions
+    mongoPath: myexpenses/api/mongo
+   
+# DATA REST (RepositoryRestProperties)
+spring.data.rest.basePath: /
+
+# AUTO-CONFIGURATION
+spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration,org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration,org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+
+management.endpoints.web.exposure.include: "*"
+management.endpoints.shutdown.enabled: true
+
+#info.app:
+#    name: @project.name@
+#    description: @project.description@
+#
+#endpoints.metrics.enabled: true
+#spring.metrics.servo.enabled: false
+#
+## Use default logging config
+#logging.config: classpath:production.xml
+## To provide custom logging configuration
+## logging.config: /usr/local/vpp/custom-logger-config.xml
+#
+## --- Jobs properties
+#jobs.scheduled.task.enable: true
+#jobs.scheduled.task.poolSize: 200
+#
+## --- Rest Template properties
+#rest.template.maxTotal: 2000
+#rest.template.defaultMaxPerRoute: 2000
+#rest.template.connectTimeout: 5000
+#rest.template.socketTimeout: 5000
+#
+# --- Jetty properties
+jetty.thread.pool.enabled: true
+jetty.thread.pool.maxThreads : 2000
+jetty.thread.pool.minThreads : 100
+
+# --- Jetty Access Log properties
+jetty.access.log.enabled: false
+jetty.access.log.origin: true
+jetty.access.log.latency: true
+jetty.access.log.date-format: dd/MMM/yyyy:HH:mm:ss.SSS Z
+jetty.access.log.custom-field: true
+jetty.access.log.custom-field-name: concurrentRequestCounter
+
+# --- CORS Properties
+cors.enabled: false
+cors.allowed-origins: '*'
+cors.allowed-headers: '*'
+cors.expose-headers: 
+cors.allow-credentials: false 
+cors.max-age: 7200 # 2h in seconds
+cors.allowed-methods: GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH
+
+
